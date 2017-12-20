@@ -1,72 +1,57 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
-'use strict';
 
-var React = require('react-native');
-var {
+import React, { Component } from 'react';
+import {
+  Platform,
   StyleSheet,
   Text,
-  View,
-  WebView
-} = React;
+  View
+} from 'react-native';
 
-var WebViewBridge = require('react-native-webview-bridge');
-
-const injectScript = `
-  (function () {
-    if (WebViewBridge) {
-
-      WebViewBridge.onMessage = function (message) {
-        if (message === "hello from react-native") {
-          WebViewBridge.send("got the message inside webview");
-        }
-      };
-
-      WebViewBridge.send("hello from webview");
-    }
-  }());
-`;
-
-var Sample2 = React.createClass({
-  onBridgeMessage: function (message) {
-    const { webviewbridge } = this.refs;
-
-    switch (message) {
-      case "hello from webview":
-        webviewbridge.sendToBridge("hello from react-native");
-        break;
-      case "got the message inside webview":
-        console.log("we have got a message from webview! yeah");
-        break;
-    }
-  },
-  render: function() {
-    return (
-      <View style={styles.container}>
-      <WebViewBridge
-        ref="webviewbridge"
-        onBridgeMessage={this.onBridgeMessage}
-        javaScriptEnabled={true}
-        injectedJavaScript={injectScript}
-        source={{uri: "https://google.com"}}/>
-        <WebViewBridge
-        ref="webviewbridge2"
-        onBridgeMessage={this.onBridgeMessage}
-        javaScriptEnabled={true}
-        injectedJavaScript={injectScript}
-        source={require('./test.html')}/>
-        </View>
-    );
-  }
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' +
+    'Cmd+D or shake for dev menu',
+  android: 'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu',
 });
 
-module.exports = Sample2;
+export default class App extends Component<{}> {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit App.js
+        </Text>
+        <Text style={styles.instructions}>
+          {instructions}
+        </Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  }
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
 });
-
