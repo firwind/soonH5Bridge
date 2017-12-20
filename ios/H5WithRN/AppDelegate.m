@@ -11,6 +11,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 @implementation AppDelegate
 
@@ -29,6 +30,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
+  [AMapServices sharedServices].apiKey = @"003c166ea23ff3c3dd8b1bafe94c7920";
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
