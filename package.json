@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.51.0",
-    "react-native-amap3d": "^0.8.0"
+    "react-native-amap3d": "^0.8.0",
+    "react-native-wechat": "^1.9.9"
   },
   "jest": {
     "preset": "react-native"
