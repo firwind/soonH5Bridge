@@ -3,6 +3,7 @@ package com.h5withrn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativepay.PayPackage;
 import cn.qiuxiang.react.amap3d.AMap3DPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -24,6 +25,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new PayPackage(),
             new AMap3DPackage()
       );
     }
