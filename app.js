@@ -12,6 +12,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import { List } from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 
 const instructions = Platform.select({
@@ -63,19 +64,9 @@ export default class App extends Component {
 }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <TouchableOpacity onPress={this.onPress}>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        </TouchableOpacity>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      <List>
+        <List.Item>微信分享</List.Item>
+      </List>
     );
   }
 }
