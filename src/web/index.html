@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    在对方是否大师傅师傅
+    <div data-demo-html="true">
+        <ul id='listView' data-role="listview" data-click="listViewClick">
+            <li data-role='list-divider'>获取app存放的tokenId</li>
+            <li onclick="showAlert">点我获取tokenId</li>
+            
+        </ul>
+    </div>
+    <script>
+       $('#listView').on("click", "li" ,function (event) {
+        alert('sdfj');
+      });
+      function showAlert(params) {
+         console.log('====================================');
+         console.log();
+         console.log('===================================='); 
+      }
+    </script>
+    <!--/demo-html -->
 </body>
 </html>
