@@ -38,8 +38,8 @@
 		510566C81FF3451700C9408D /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 510566C41FF3451700C9408D /* jquery.js */; };
 		510566C91FF3451700C9408D /* jquery.mobile-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 510566C51FF3451700C9408D /* jquery.mobile-1.4.5.min.css */; };
 		510566CA1FF3451700C9408D /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 510566C61FF3451700C9408D /* jquery.mobile-1.4.5.min.js */; };
-		510566CC1FF3456A00C9408D /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 510566CB1FF3456A00C9408D /* ExampleApp.html */; };
 		510566CF1FF367F400C9408D /* CustomWebviewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 510566CE1FF367F400C9408D /* CustomWebviewManager.m */; };
+		510567222008B7B100C9408D /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 510567212008B7B100C9408D /* ExampleApp.html */; };
 		511F47671FEA2B5400813530 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F47661FEA2B5400813530 /* libz.tbd */; };
 		511F47691FEA2B6000813530 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F47681FEA2B6000813530 /* libc++.tbd */; };
 		511F476B1FEA2B6F00813530 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F476A1FEA2B6800813530 /* CoreMotion.framework */; };
@@ -59,8 +59,10 @@
 		7E51E2D4805F4B92B72C05BF /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DB1FEA9973420C848CF841 /* libcxxreact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8F525C0A503845D4856F80A2 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1609964EA14B2E82034868 /* libyoga.a */; };
+		AD1CF3CF514544159FF4A26B /* libRCTWeiboAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FAD83795CE46C8B7F4D996 /* libRCTWeiboAPI.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		E7FA9ABA1CE0D6744438EF80 /* libPods-H5WithRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 620204503088A27C23105B95 /* libPods-H5WithRN.a */; };
+		ED859A35EA8E499383800A0B /* libAMap3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBD10DC29D14D718BE56F20 /* libAMap3D.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +297,20 @@
 			remoteGlobalIDString = 10D6D7A41F160C250066F0F3;
 			remoteInfo = RCTWeChatTests;
 		};
+		519BEC521FF4D8C100357977 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6C0C31A3034F20A4AAA352 /* AMap3D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = AMap3D;
+		};
+		519BEC551FF4D8C100357977 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53A17670B0084C88B18F40BB /* RCTWeiboAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 915450F51C3D1520000CBFD2;
+			remoteInfo = RCTWeiboAPI;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -361,9 +377,9 @@
 		510566C41FF3451700C9408D /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		510566C51FF3451700C9408D /* jquery.mobile-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.min.css"; sourceTree = "<group>"; };
 		510566C61FF3451700C9408D /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
-		510566CB1FF3456A00C9408D /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
 		510566CD1FF367F400C9408D /* CustomWebviewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWebviewManager.h; sourceTree = "<group>"; };
 		510566CE1FF367F400C9408D /* CustomWebviewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWebviewManager.m; sourceTree = "<group>"; };
+		510567212008B7B100C9408D /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = ExampleApp.html; path = ../src/web/ExampleApp.html; sourceTree = "<group>"; };
 		511F47661FEA2B5400813530 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		511F47681FEA2B6000813530 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		511F476A1FEA2B6800813530 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -376,15 +392,19 @@
 		511F47781FEA2BE200813530 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		511F477A1FEA2BFA00813530 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		511F477C1FEA2C9100813530 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		53A17670B0084C88B18F40BB /* RCTWeiboAPI.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWeiboAPI.xcodeproj; path = "../node_modules/react-native-weibo/ios/RCTWeiboAPI.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		620204503088A27C23105B95 /* libPods-H5WithRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-H5WithRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1609964EA14B2E82034868 /* libyoga.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libyoga.a; sourceTree = "<group>"; };
 		731C4E4BEBADFB96F654970F /* Pods-H5WithRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H5WithRN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-H5WithRN/Pods-H5WithRN.debug.xcconfig"; sourceTree = "<group>"; };
+		74FAD83795CE46C8B7F4D996 /* libRCTWeiboAPI.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTWeiboAPI.a; sourceTree = "<group>"; };
 		76A6617AAD634654842B7A0F /* libthird-party.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libthird-party.a"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B0DB1FEA9973420C848CF841 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
+		CD6C0C31A3034F20A4AAA352 /* AMap3D.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AMap3D.xcodeproj; path = "../node_modules/react-native-amap3d/ios/AMap3D.xcodeproj"; sourceTree = "<group>"; };
+		EFBD10DC29D14D718BE56F20 /* libAMap3D.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAMap3D.a; sourceTree = "<group>"; };
 		F759064F069C435C94F41368 /* RCTWeChat.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWeChat.xcodeproj; path = "../node_modules/react-native-wechat/ios/RCTWeChat.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -426,6 +446,8 @@
 				556E10A3ED594559BE46E8CE /* libjschelpers.a in Frameworks */,
 				17DC9D88E9AC491083619F20 /* libthird-party.a in Frameworks */,
 				39F1C7A288764C5FA2797CF5 /* libdouble-conversion.a in Frameworks */,
+				ED859A35EA8E499383800A0B /* libAMap3D.a in Frameworks */,
+				AD1CF3CF514544159FF4A26B /* libRCTWeiboAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +541,7 @@
 		13B07FAE1A68108700A75B9A /* H5WithRN */ = {
 			isa = PBXGroup;
 			children = (
-				510566CB1FF3456A00C9408D /* ExampleApp.html */,
+				510567212008B7B100C9408D /* ExampleApp.html */,
 				510566C21FF3451700C9408D /* index.html */,
 				510566C31FF3451700C9408D /* jqueryMobile */,
 				511F477C1FEA2C9100813530 /* AlipaySDK.framework */,
@@ -598,6 +620,8 @@
 				50209C40AA5741CDB4621D52 /* libjschelpers.a */,
 				76A6617AAD634654842B7A0F /* libthird-party.a */,
 				4CF2D54A9E724E46AF40CB8B /* libdouble-conversion.a */,
+				EFBD10DC29D14D718BE56F20 /* libAMap3D.a */,
+				74FAD83795CE46C8B7F4D996 /* libRCTWeiboAPI.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -607,6 +631,22 @@
 			children = (
 				519B057C1FEA671900E7947A /* libRCTWeChat.a */,
 				519B057E1FEA671900E7947A /* RCTWeChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		519BEC4D1FF4D8C100357977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				519BEC561FF4D8C100357977 /* libRCTWeiboAPI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		519BEC4F1FF4D8C100357977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				519BEC531FF4D8C100357977 /* libAMap3D.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -645,6 +685,8 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				F759064F069C435C94F41368 /* RCTWeChat.xcodeproj */,
+				CD6C0C31A3034F20A4AAA352 /* AMap3D.xcodeproj */,
+				53A17670B0084C88B18F40BB /* RCTWeiboAPI.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -797,6 +839,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 519BEC4F1FF4D8C100357977 /* Products */;
+					ProjectRef = CD6C0C31A3034F20A4AAA352 /* AMap3D.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -843,6 +889,10 @@
 				{
 					ProductGroup = 519B05771FEA671900E7947A /* Products */;
 					ProjectRef = F759064F069C435C94F41368 /* RCTWeChat.xcodeproj */;
+				},
+				{
+					ProductGroup = 519BEC4D1FF4D8C100357977 /* Products */;
+					ProjectRef = 53A17670B0084C88B18F40BB /* RCTWeiboAPI.xcodeproj */;
 				},
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
@@ -1083,6 +1133,20 @@
 			remoteRef = 519B057D1FEA671900E7947A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		519BEC531FF4D8C100357977 /* libAMap3D.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAMap3D.a;
+			remoteRef = 519BEC521FF4D8C100357977 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		519BEC561FF4D8C100357977 /* libRCTWeiboAPI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTWeiboAPI.a;
+			remoteRef = 519BEC551FF4D8C100357977 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1131,7 +1195,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				510566C91FF3451700C9408D /* jquery.mobile-1.4.5.min.css in Resources */,
-				510566CC1FF3456A00C9408D /* ExampleApp.html in Resources */,
+				510567222008B7B100C9408D /* ExampleApp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,11 +1365,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
+					"$(SRCROOT)/../node_modules/react-native-amap3d/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-weibo/ios/**",
 				);
 				INFOPLIST_FILE = H5WithRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/H5WithRN\"",
+					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
@@ -1338,11 +1406,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
+					"$(SRCROOT)/../node_modules/react-native-amap3d/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-weibo/ios/**",
 				);
 				INFOPLIST_FILE = H5WithRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/H5WithRN\"",
+					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
 					"\"$(SRCROOT)/H5WithRN\"",
@@ -1376,6 +1448,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
+					"$(SRCROOT)/../node_modules/react-native-amap3d/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-weibo/ios/**",
 				);
 				INFOPLIST_FILE = "H5WithRN-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1410,6 +1484,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
+					"$(SRCROOT)/../node_modules/react-native-amap3d/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-weibo/ios/**",
 				);
 				INFOPLIST_FILE = "H5WithRN-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -3,17 +3,17 @@ import {Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 're
 import {List} from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 import {datas} from './Data';
-
-
+import * as Tools from './NativeTools';
 export default class NativeHome extends Component {
   constructor(props, context) {
     super(props, context)
     WeChat.registerApp('wx35f14e67f7ac19bc');
   }
 
-  onPress = () => {
-    this.share('1');
-  }
+  // onPress = () => {
+  //   this.share('1');
+  // }
+   
   async share(type) {
     switch (type) {
       case '1':
@@ -38,6 +38,30 @@ export default class NativeHome extends Component {
     }
 
   }
+  // export const datas = [
+  //   {'key':'获取app存取的tokenId','value':['点我获取tokenId']},  
+  //   {'key':'分享','value':['微信分享','微博分享']}, 
+  //   {'key':'登录','value':['微信登录']}, 
+  //   {'key':'支付','value':['微信支付','支付宝支付']},
+  //   {'key':'定位','value':['点击获取位置']}, 
+  //   {'key':'推送','value':['阿里推送']}, 
+  //   {'key':'导航栏控制','value':['隐藏导航栏']}, 
+  //   {'key':'退出app','value':['点我退出app']},
+  //   {'key':'打开新的 webview','value':['点我打开新的webview']},   
+  // ];
+  onclick = async (text)=>{
+  switch (text) {
+    case '点我获取tokenId':
+      const token = await Tools.getNativeTokenId();
+      alert('token是'+token);
+      break;
+    case '微信分享':
+      Tools.shareToSession()
+      break;
+    default:
+      break;
+  }
+  }
   render() {
     return (
       <ScrollView>
@@ -45,7 +69,7 @@ export default class NativeHome extends Component {
           datas.map((item)=>(
             <List key={item.key} renderHeader={() => item.key}>
                {
-                 item.value.map((text)=>(<List.Item key={text}>{text}</List.Item>))
+                 item.value.map((text)=>(<List.Item onClick={()=>this.onclick(text)} key={text}>{text}</List.Item>))
                }
             </List>
           ))

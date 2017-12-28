@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, WebView } from 'react-native';
 import {Toast} from 'antd-mobile';
 import CustomWebview from './components/WebviewBridge';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+// import * 
 const mHtml = require('./web/index.html');
 // create a component
 class WebHome extends Component {
@@ -24,7 +25,6 @@ class WebHome extends Component {
              ref={(web)=>this.web=web}
              injectJavaScript={()=>this.injectJavaScript(script)}
              source={mHtml}
-             onLoadStart={()=>Toast.loading('Loading', 5)}
              onError={()=>Toast.hide()}
              onLoadEnd={()=>Toast.hide()}
              javaScriptEnabled

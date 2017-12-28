@@ -35,19 +35,11 @@ $('#listView').on("click", "li" ,function (event) {
             break;
     }
 });
-
-function globl(cb){
-
-    
-}
-
 function jsCalled_getSignInToken() {
-    window.postMessage({},callbakc(params) {
-     
-    });
-
+    window.postMessage(event.target.textContent);
 }
-window.signin=function (params) {
+function SignIn(params) {
     window.postMessage('gdsgds');
-    alert('回调我了吗');   
+    alert('回调我了吗'); 
+    
  }

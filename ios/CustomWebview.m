@@ -29,45 +29,55 @@
       NSLog(@"ObjC Echo called with: %@", data);
       responseCallback(data);
     }];
-    [_bridge registerHandler:@"OC提供方法给JS调用" handler:^(id data, WVJBResponseCallback responseCallback) {
+    [_bridge registerHandler:@"oc" handler:^(id data, WVJBResponseCallback responseCallback) {
       //NSLog(@"testObjcCallback called: %@", data);
       responseCallback(@"OC发给JS的返回值");
     }];
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:webView];
+    [_bridge setWebViewDelegate:self];
+    
+    [_bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
+      NSLog(@"testObjcCallback called: %@", data);
+      responseCallback(@"Response from testObjcCallback");
+    }];
+    
+    [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
+  //  [self loadExamplePage];
    // [self loadExamplePage];
   }
   return self;
 }
   - (void)setSource:(NSDictionary *)source
   {
-    if (![_source isEqualToDictionary:source]) {
-      _source = [source copy];
-      
-      // Check for a static html source first
-      NSString *html = [RCTConvert NSString:source[@"html"]];
-      if (html) {
-        NSURL *baseURL = [RCTConvert NSURL:source[@"baseUrl"]];
-        if (!baseURL) {
-          baseURL = [NSURL URLWithString:@"about:blank"];
-        }
-        [webView loadHTMLString:html baseURL:baseURL];
-        return;
-      }
-      
-      NSURLRequest *request = [RCTConvert NSURLRequest:source];
-      // Because of the way React works, as pages redirect, we actually end up
-      // passing the redirect urls back here, so we ignore them if trying to load
-      // the same url. We'll expose a call to 'reload' to allow a user to load
-      // the existing page.
-      if ([request.URL isEqual:webView.request.URL]) {
-        return;
-      }
-      if (!request.URL) {
-        // Clear the webview
-        [webView loadHTMLString:@"" baseURL:nil];
-        return;
-      }
-      [webView loadRequest:request];
-    }
+//    if (![_source isEqualToDictionary:source]) {
+//      _source = [source copy];
+//      
+//      // Check for a static html source first
+//      NSString *html = [RCTConvert NSString:source[@"html"]];
+//      if (html) {
+//        NSURL *baseURL = [RCTConvert NSURL:source[@"baseUrl"]];
+//        if (!baseURL) {
+//          baseURL = [NSURL URLWithString:@"about:blank"];
+//        }
+//        [webView loadHTMLString:html baseURL:baseURL];
+//        return;
+//      }
+//      
+//      NSURLRequest *request = [RCTConvert NSURLRequest:source];
+//      // Because of the way React works, as pages redirect, we actually end up
+//      // passing the redirect urls back here, so we ignore them if trying to load
+//      // the same url. We'll expose a call to 'reload' to allow a user to load
+//      // the existing page.
+//      if ([request.URL isEqual:webView.request.URL]) {
+//        return;
+//      }
+//      if (!request.URL) {
+//        // Clear the webview
+//        [webView loadHTMLString:@"" baseURL:nil];
+//        return;
+//      }
+//      [webView loadRequest:request];
+//    }
   }
   //开始加载的时候执行该方法。
 - (void)webViewDidStartLoad:(UIWebView *)webView{
@@ -97,12 +107,10 @@
   }
   self.onError(@{});
 }
-
 - (void)loadExamplePage {
   NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"ExampleApp" ofType:@"html"];
   NSString* appHtml = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
   NSURL *baseURL = [NSURL fileURLWithPath:htmlPath];
   [webView loadHTMLString:appHtml baseURL:baseURL];
 }
-
 @end
