@@ -3,7 +3,17 @@ import * as WeChat from 'react-native-wechat';
 import JShareModule from 'jshare-react-native';
 import {Toast} from 'antd-mobile';
 const Alipay = NativeModules.Alipay;
-
+// export const datas = [
+//   {'key':'获取app存取的tokenId','value':[{'title':'点我获取tokenId',id:'1'}]},  
+//   {'key':'分享','value':[{'title':'微信分享',id:'2'},{'title':'微博分享',id:'3'}]}, 
+//   {'key':'登录','value':[{'title':'微信登录',id:'4'}]}, 
+//   {'key':'支付','value':[{'title':'微信支付',id:'5'},{'title':'支付宝支付',id:'6'}]},
+//   {'key':'定位','value':[{'title':'点击获取位置',id:'7'}]}, 
+//   {'key':'推送','value':[{'title':'阿里推送',id:'8'}]}, 
+//   {'key':'导航栏控制','value':[{'title':'隐藏导航栏',id:'9'}]}, 
+//   {'key':'退出app','value':[{'title':'点我退出app',id:'10'}]},
+//   {'key':'打开新的 webview','value':[{'title':'点我打开新的webview',id:'11'}]},   
+// ];
 export async function getNativeTokenId(params) {
     let tokenId = await AsyncStorage.getItem('tokenId');
     return tokenId;
@@ -131,37 +141,48 @@ export function getLocation() {
       }
   );
 }
-export async function onclick(text,navigation){
-  switch (text) {
-    case '点我获取tokenId':
+// export const datas = [
+//   {'key':'获取app存取的tokenId','value':[{'title':'点我获取tokenId',id:'1'}]},  
+//   {'key':'分享','value':[{'title':'微信分享',id:'2'},{'title':'微博分享',id:'3'}]}, 
+//   {'key':'登录','value':[{'title':'微信登录',id:'4'}]}, 
+//   {'key':'支付','value':[{'title':'微信支付',id:'5'},{'title':'支付宝支付',id:'6'}]},
+//   {'key':'定位','value':[{'title':'点击获取位置',id:'7'}]}, 
+//   {'key':'推送','value':[{'title':'阿里推送',id:'8'}]}, 
+//   {'key':'导航栏控制','value':[{'title':'隐藏导航栏',id:'9'}]}, 
+//   {'key':'退出app','value':[{'title':'点我退出app',id:'10'}]},
+//   {'key':'打开新的 webview','value':[{'title':'点我打开新的webview',id:'11'}]},   
+// ];
+export async function onclick(id,navigation){
+  switch (id) {
+    case '1':
       const token = await getNativeTokenId();
       alert('token是'+token);
       break;
-    case '微信分享':
+    case '2':
       shareToSession();
       break;
-    case '微博分享':
+    case '3':
       shareToSina();
       break;
-    case '微信登录':
+    case '4':
       sendAuthRequest();
       break;
-    case '支付宝支付':
+    case '6':
       aliPay();
       break;
-    case '微信支付':
+    case '5':
       weixinPay();
       break;
-    case '点击获取位置':
+    case '7':
       getLocation();
       break;
-    case '隐藏导航栏':
+    case '9':
       navigation.setParams({isHeaderShow:!navigation.state.params.isHeaderShow});
       break;
-    case '点我退出app':
+    case '10':
       Toast.show('此功能仅限于android平台');
       break;
-    case '阿里推送':
+    case '8':
       Toast.loading('loading',10);
       setTimeout(function() {
         Toast.hide();
@@ -177,7 +198,7 @@ export async function onclick(text,navigation){
         )
       }, 500);
       break;
-     case '点我打开新的webview':
+     case '11':
      navigation.navigate('WebHome',{uri:'http://www.baidu.com'});
       break;
     default:

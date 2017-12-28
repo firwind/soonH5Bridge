@@ -1,41 +1,41 @@
 
 $('#listView').on("click", "li" ,function (event) {
-    window.postMessage(event.target.textContent);
-    switch (event.target.textContent) {
+    window.postMessage(event.target.dataset.content);
+    // switch (event.target.textContent) {
 
-        case '点我获取tokenId':
-            jsCalled_getSignInToken(event.target.textContent);
-            break;
-        case '微信分享':
+    //     case '点我获取tokenId':
+    //         jsCalled_getSignInToken(event.target.textContent);
+    //         break;
+    //     case '微信分享':
         
-        break;
-        case '微信登录':
+    //     break;
+    //     case '微信登录':
         
-        break;
-        case '微信支付':
+    //     break;
+    //     case '微信支付':
         
-        break;
-        case '支付宝支付':
+    //     break;
+    //     case '支付宝支付':
         
-        break;
-        case '点击获取位置':
+    //     break;
+    //     case '点击获取位置':
         
-        break;
-        case '阿里推送':
+    //     break;
+    //     case '阿里推送':
         
-        break;
-        case '隐藏导航栏':
+    //     break;
+    //     case '隐藏导航栏':
         
-        break;
-        case '点我退出app':
+    //     break;
+    //     case '点我退出app':
         
-        break;
-        case '点我打开新的webview':
+    //     break;
+    //     case '点我打开新的webview':
         
-        break;
-        default:
-            break;
-    }
+    //     break;
+    //     default:
+    //         break;
+    // }
 });
 
 // function globl(cb){
