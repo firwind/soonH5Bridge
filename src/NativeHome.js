@@ -65,7 +65,7 @@ export default class NativeHome extends Component {
           datas.map((item)=>(
             <List key={item.key} renderHeader={() => item.key}>
                {
-                 item.value.map((text)=>(<List.Item onClick={()=>Tools.onclick(text)} key={text}>{text}</List.Item>))
+                 item.value.map((text)=>(<List.Item onClick={()=>Tools.onclick(text,this.props.navigation)} key={text}>{text}</List.Item>))
                }
             </List>
           ))

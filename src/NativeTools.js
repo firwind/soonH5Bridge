@@ -1,4 +1,4 @@
-import { AsyncStorage,NativeModules,Geolocation } from 'react-native';
+import { AsyncStorage,NativeModules,Geolocation,Alert } from 'react-native';
 import * as WeChat from 'react-native-wechat';
 import JShareModule from 'jshare-react-native';
 import {Toast} from 'antd-mobile';
@@ -131,7 +131,7 @@ export function getLocation() {
       }
   );
 }
-export async function onclick(text){
+export async function onclick(text,navigation){
   switch (text) {
     case '点我获取tokenId':
       const token = await getNativeTokenId();
@@ -156,7 +156,7 @@ export async function onclick(text){
       getLocation();
       break;
     case '隐藏导航栏':
-      this.props.navigation.setParams({isHeaderShow:!this.props.navigation.state.params.isHeaderShow});
+      navigation.setParams({isHeaderShow:!navigation.state.params.isHeaderShow});
       break;
     case '点我退出app':
       Toast.show('此功能仅限于android平台');
@@ -171,14 +171,14 @@ export async function onclick(text){
           [
            
             {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-            {text: '点击查看', onPress: () => this.props.navigation.navigate('WebHome',{uri:'http://www.baidu.com'})},
+            {text: '点击查看', onPress: () => navigation.navigate('WebHome',{uri:'http://www.baidu.com'})},
           ],
           { cancelable: false }
         )
       }, 500);
       break;
      case '点我打开新的webview':
-     this.props.navigation.navigate('WebHome',{uri:'http://www.baidu.com'});
+     navigation.navigate('WebHome',{uri:'http://www.baidu.com'});
       break;
     default:
       break;

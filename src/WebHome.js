@@ -10,7 +10,7 @@ const mHtml = require('./web/index.html');
 class WebHome extends Component {
     onMessage = (message) => {
     let text = message.nativeEvent.data;
-    Tools.onclick(text);
+    Tools.onclick(text,this.props.navigation);
      console.log('====================================');
      console.log('第三方士大夫');
      console.log('====================================');
