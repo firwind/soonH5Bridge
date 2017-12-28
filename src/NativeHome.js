@@ -4,10 +4,24 @@ import {List} from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 import {datas} from './Data';
 import * as Tools from './NativeTools';
+import JShareModule from 'jshare-react-native';
 
 export default class NativeHome extends Component {
   constructor(props, context) {
     super(props, context)
+    var config = 
+    {
+      appKey:'a1703c14b186a68a66ef86c1',
+      channel:'',
+      advertisingId:'',
+      isProduction:false,
+      sinaWeiboAppKey: '2731775419',
+      sinaWeiboAppSecret: '9a4de9b9116ab5598768a6cd39fca078',
+      sinaRedirectUri: 'https://www.jiguang.cn',
+      isSupportWebSina: false
+    }
+     
+    JShareModule.setup(config)
     WeChat.registerApp('wx35f14e67f7ac19bc');
   }
   onclick = async (text)=>{
@@ -17,7 +31,13 @@ export default class NativeHome extends Component {
         alert('token是'+token);
         break;
       case '微信分享':
-        Tools.shareToSession()
+        Tools.shareToSession();
+        break;
+      case '微博分享':
+        Tools.shareToSina();
+        break;
+      case '微信登录':
+        Tools.sendAuthRequest();
         break;
       default:
         break;
