@@ -6,7 +6,12 @@ import { View, Dimensions } from 'react-native';
 
 
 const HomeRouter = StackNavigator(
-    {
+    {   WebHome:{
+        screen: WebHome,
+        navigationOptions: {
+            title: '网页',
+        }   
+       },
         NativeHome:{
             screen: NativeHome,
             navigationOptions: ({navigation}) => {

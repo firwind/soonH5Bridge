@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Platform, ScrollView, Alert,StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {List,Toast} from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 import {datas} from './Data';
@@ -29,43 +29,7 @@ export default class NativeHome extends Component {
     JShareModule.setup(config)
     WeChat.registerApp('wx35f14e67f7ac19bc');
   }
-  onclick = async (text)=>{
-    switch (text) {
-      case '点我获取tokenId':
-        const token = await Tools.getNativeTokenId();
-        alert('token是'+token);
-        break;
-      case '微信分享':
-        Tools.shareToSession();
-        break;
-      case '微博分享':
-        Tools.shareToSina();
-        break;
-      case '微信登录':
-        Tools.sendAuthRequest();
-        break;
-      case '支付宝支付':
-        Tools.aliPay();
-        break;
-      case '微信支付':
-        Tools.weixinPay();
-        break;
-      case '点击获取位置':
-        Tools.getLocation();
-        break;
-      case '隐藏导航栏':
-        this.props.navigation.setParams({isHeaderShow:!this.props.navigation.state.params.isHeaderShow});
-        break;
-      case '点我退出app':
-        Toast.show('此功能仅限于android平台');
-        break;
-      case '阿里推送':
-        Toast.show('');
-        break;
-      default:
-        break;
-    }
-    }
+ 
   
   // onPress = () => {
   //   this.share('1');
@@ -101,7 +65,7 @@ export default class NativeHome extends Component {
           datas.map((item)=>(
             <List key={item.key} renderHeader={() => item.key}>
                {
-                 item.value.map((text)=>(<List.Item onClick={()=>this.onclick(text)} key={text}>{text}</List.Item>))
+                 item.value.map((text)=>(<List.Item onClick={()=>Tools.onclick(text)} key={text}>{text}</List.Item>))
                }
             </List>
           ))

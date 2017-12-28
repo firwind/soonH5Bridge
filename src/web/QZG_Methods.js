@@ -1,6 +1,8 @@
 
 $('#listView').on("click", "li" ,function (event) {
+    window.postMessage(event.target.textContent);
     switch (event.target.textContent) {
+
         case '点我获取tokenId':
             jsCalled_getSignInToken(event.target.textContent);
             break;
@@ -36,18 +38,16 @@ $('#listView').on("click", "li" ,function (event) {
     }
 });
 
-function globl(cb){
+// function globl(cb){
 
     
-}
+// }
 
-function jsCalled_getSignInToken() {
-    window.postMessage({},callbakc(params) {
-     
-    });
+// function jsCalled_getSignInToken() {
+//     window.postMessage({},callbakc(params) {
 
-}
-window.signin=function (params) {
-    window.postMessage('gdsgds');
-    alert('回调我了吗');   
- }
+// }
+// window.signin=function (params) {
+//     window.postMessage('gdsgds');
+//     alert('回调我了吗');   
+//  }

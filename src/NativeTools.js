@@ -1,6 +1,7 @@
 import { AsyncStorage,NativeModules,Geolocation } from 'react-native';
 import * as WeChat from 'react-native-wechat';
 import JShareModule from 'jshare-react-native';
+import {Toast} from 'antd-mobile';
 const Alipay = NativeModules.Alipay;
 
 export async function getNativeTokenId(params) {
@@ -130,3 +131,56 @@ export function getLocation() {
       }
   );
 }
+export async function onclick(text){
+  switch (text) {
+    case '点我获取tokenId':
+      const token = await getNativeTokenId();
+      alert('token是'+token);
+      break;
+    case '微信分享':
+      shareToSession();
+      break;
+    case '微博分享':
+      shareToSina();
+      break;
+    case '微信登录':
+      sendAuthRequest();
+      break;
+    case '支付宝支付':
+      aliPay();
+      break;
+    case '微信支付':
+      weixinPay();
+      break;
+    case '点击获取位置':
+      getLocation();
+      break;
+    case '隐藏导航栏':
+      this.props.navigation.setParams({isHeaderShow:!this.props.navigation.state.params.isHeaderShow});
+      break;
+    case '点我退出app':
+      Toast.show('此功能仅限于android平台');
+      break;
+    case '阿里推送':
+      Toast.loading('loading',10);
+      setTimeout(function() {
+        Toast.hide();
+        Alert.alert(
+          '收到推送',
+          '推送消息',
+          [
+           
+            {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: '点击查看', onPress: () => this.props.navigation.navigate('WebHome',{uri:'http://www.baidu.com'})},
+          ],
+          { cancelable: false }
+        )
+      }, 500);
+      break;
+     case '点我打开新的webview':
+     this.props.navigation.navigate('WebHome',{uri:'http://www.baidu.com'});
+      break;
+    default:
+      break;
+  }
+  }
