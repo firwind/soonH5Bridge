@@ -4,27 +4,38 @@ import { View, Text, StyleSheet, WebView } from 'react-native';
 import {Toast} from 'antd-mobile';
 import CustomWebview from './components/WebviewBridge';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
-// import * 
-const mHtml = require('./web/index.html');
+import * as Tools from './NativeTools';
 // create a component
+var isHeaderShow = true;
 class WebHome extends Component {
+
+    constructor(props, context) {
+        super(props, context);
+        this.props.navigation.setParams({isHeaderShow});
+    }
+    
     onMessage = (message) => {
     let text = message.nativeEvent.data;
-    this.injectJavaScript();
+    Tools.onclick(text,this.props.navigation);
+
      console.log('====================================');
      console.log('第三方士大夫');
      console.log('====================================');
     }
-    injectJavaScript = (script) =>{
-        this.web.injectJavaScript('javascript:SignIn(jjjj)');
-    }
+    // injectJavaScript = (text) =>{
+    //     this.web.injectJavaScript('javascript:SignIn(jjjj)');
+    // }
     
     render() {
+        let url = '';
+        if (this.props.navigation.state.params) {
+            url=this.props.navigation.state.params.uri;
+        }
         return (
-            <CustomWebview 
+            <Webview 
              ref={(web)=>this.web=web}
              injectJavaScript={()=>this.injectJavaScript(script)}
-             source={mHtml}
+             source={url?{uri:url}:{uri:'http://7xqi6y.com1.z0.glb.clouddn.com/index.html'}}
              onError={()=>Toast.hide()}
              onLoadEnd={()=>Toast.hide()}
              javaScriptEnabled

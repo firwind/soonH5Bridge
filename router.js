@@ -6,13 +6,43 @@ import { View, Dimensions } from 'react-native';
 
 
 const HomeRouter = StackNavigator(
-    {
+    {   WebHome:{
+        screen: WebHome,
+        navigationOptions: ({navigation}) => {
+            let visible = false;
+            if (navigation.state.params) {
+                if (navigation.state.params.isHeaderShow) {
+                    visible= true;
+                    return {
+                        title:'网页',
+                   }
+                }
+                
+            }
+            return {
+                header:null
+            }
+        }
+       },
         NativeHome:{
             screen: NativeHome,
-            navigationOptions: {
-                title: '原生',
-            }   
+            navigationOptions: ({navigation}) => {
+                let visible = false;
+                if (navigation.state.params) {
+                    if (navigation.state.params.isHeaderShow) {
+                        visible= true;
+                        return {
+                            title:'原生',
+                       }
+                    }
+                    
+                }
+                return {
+                    header:null
+                }
+            }
         }
+
     },
     {
         initialRouteName: 'NativeHome',
@@ -23,10 +53,20 @@ const HomeRouter = StackNavigator(
 const MineTab = StackNavigator( {
     WebHome:{
         screen: WebHome,
-        navigationOptions: {
-            title: '网页',
-        }   
-    }
+        navigationOptions: ({navigation}) => {
+            let visible = false;
+            if (navigation.state.params) {
+                if (navigation.state.params.isHeaderShow) {
+                    visible= true;
+                    return {
+                        title:'网页',
+                   }
+                }
+                
+            }
+            return {
+                header:null
+            }}}
     },
     {
         initialRouteName: 'WebHome',
@@ -92,7 +132,7 @@ class mrouter extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Router />
+                <HomeRouter />
             </View>
         );
     }

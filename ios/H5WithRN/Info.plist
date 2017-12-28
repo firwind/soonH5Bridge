@@ -22,6 +22,14 @@
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
+    <dict>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>H5WithRN</string>
+      </array>
+    </dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -32,6 +40,16 @@
 				<string>wx35f14e67f7ac19bc</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.sina</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb2731775419</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -39,6 +57,11 @@
 	<array>
 		<string>weixin</string>
 		<string>wechat</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -53,7 +76,66 @@
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
-		</dict>
+      <key>sina.com.cn</key>
+      <dict>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+      <key>sinaimg.cn</key>
+      <dict>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+      <key>sinajs.cn</key>
+      <dict>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+      <key>sina.cn</key>
+      <dict>
+        <!-- 适配 iOS10 -->
+        <key>NSExceptionMinimumTLSVersion</key>
+        <string>TLSv1.0</string>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+      <key>weibo.cn</key>
+      <dict>
+        <!-- 适配 iOS10 -->
+        <key>NSExceptionMinimumTLSVersion</key>
+        <string>TLSv1.0</string>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+      <key>weibo.com</key>
+      <dict>
+        <!-- 适配 iOS10 -->
+        <key>NSExceptionMinimumTLSVersion</key>
+        <string>TLSv1.0</string>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+    </dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
