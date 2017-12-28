@@ -24,7 +24,6 @@ class WebHome extends Component {
              ref={(web)=>this.web=web}
              injectJavaScript={()=>this.injectJavaScript(script)}
              source={mHtml}
-             onLoadStart={()=>Toast.loading('Loading', 5)}
              onError={()=>Toast.hide()}
              onLoadEnd={()=>Toast.hide()}
              javaScriptEnabled

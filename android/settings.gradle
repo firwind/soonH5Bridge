@@ -1,4 +1,6 @@
 rootProject.name = 'H5WithRN'
+include ':jshare-react-native'
+project(':jshare-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jshare-react-native/android')
 include ':react-native-wechat'
 project(':react-native-wechat').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-wechat/android')
 include ':react-native-amap3d'

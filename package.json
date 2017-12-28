@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "antd-mobile": "^2.1.1",
+    "jcore-react-native": "^1.2.2",
+    "jshare-react-native": "^1.1.4",
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-native-amap3d": "^0.8.0",

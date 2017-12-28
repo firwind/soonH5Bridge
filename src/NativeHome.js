@@ -3,41 +3,54 @@ import {Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 're
 import {List} from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 import {datas} from './Data';
-
+import * as Tools from './NativeTools';
 
 export default class NativeHome extends Component {
   constructor(props, context) {
     super(props, context)
     WeChat.registerApp('wx35f14e67f7ac19bc');
   }
-
-  onPress = () => {
-    this.share('1');
-  }
-  async share(type) {
-    switch (type) {
-      case '1':
-        {
-          try {
-            let result = await WeChat.shareToSession({type: 'news', title: '送你300积分，快来领取吧！', description: '领取300积分，扫码免费喝健康好水，还有更多抽奖等你拿！', webpageUrl: 'http://www.baidu.com'});
-            console.log('share image url to time line successful:', result);
-          } catch (e) {
-            if (e instanceof WeChat.WechatError) {
-              console.error(e.stack);
-            } else {
-              throw e;
-            }
-          }
-        }
+  onclick = async (text)=>{
+    switch (text) {
+      case '点我获取tokenId':
+        const token = await Tools.getNativeTokenId();
+        alert('token是'+token);
         break;
-      case '2':
-        {}
+      case '微信分享':
+        Tools.shareToSession()
         break;
       default:
         break;
     }
+    }
+  
+  // onPress = () => {
+  //   this.share('1');
+  // }
+  // async share(type) {
+  //   switch (type) {
+  //     case '1':
+  //       {
+  //         try {
+  //           let result = await WeChat.shareToSession({type: 'news', title: '送你300积分，快来领取吧！', description: '领取300积分，扫码免费喝健康好水，还有更多抽奖等你拿！', webpageUrl: 'http://www.baidu.com'});
+  //           console.log('share image url to time line successful:', result);
+  //         } catch (e) {
+  //           if (e instanceof WeChat.WechatError) {
+  //             console.error(e.stack);
+  //           } else {
+  //             throw e;
+  //           }
+  //         }
+  //       }
+  //       break;
+  //     case '2':
+  //       {}
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
-  }
+  // }
   render() {
     return (
       <ScrollView>
@@ -45,7 +58,7 @@ export default class NativeHome extends Component {
           datas.map((item)=>(
             <List key={item.key} renderHeader={() => item.key}>
                {
-                 item.value.map((text)=>(<List.Item key={text}>{text}</List.Item>))
+                 item.value.map((text)=>(<List.Item onClick={()=>this.onclick(text)} key={text}>{text}</List.Item>))
                }
             </List>
           ))

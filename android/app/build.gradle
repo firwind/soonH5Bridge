@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':jshare-react-native')
     compile project(':react-native-wechat')
     compile project(':react-native-amap3d')
     compile fileTree(dir: "libs", include: ["*.jar"])
