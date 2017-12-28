@@ -1,6 +1,7 @@
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage,NativeModules,Geolocation } from 'react-native';
 import * as WeChat from 'react-native-wechat';
 import JShareModule from 'jshare-react-native';
+const Alipay = NativeModules.Alipay;
 
 export async function getNativeTokenId(params) {
     let tokenId = await AsyncStorage.getItem('tokenId');
@@ -45,4 +46,87 @@ export async function sendAuthRequest(params) {
        alert('登录授权发生错误：', err.message);
   })
 
+}
+export function aliPay(params) {
+  let orderString = 'app_id=2015052600090779&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22seller_id%22%3A%22%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22total_amount%22%3A%220.02%22%2C%22subject%22%3A%221%22%2C%22body%22%3A%22%E6%88%91%E6%98%AF%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%22%2C%22out_trade_no%22%3A%22314VYGIAGG7ZOYY%22%7D&charset=utf-8&method=alipay.trade.app.pay&sign_type=RSA2&timestamp=2016-08-15%2012%3A12%3A15&version=1.0&sign=MsbylYkCzlfYLy9PeRwUUIg9nZPeN9SfXPNavUCroGKR5Kqvx0nEnd3eRmKxJuthNUx4ERCXe552EV9PfwexqW%2B1wbKOdYtDIb4%2B7PL3Pc94RZL0zKaWcaY3tSL89%2FuAVUsQuFqEJdhIukuKygrXucvejOUgTCfoUdwTi7z%2BZzQ%3D';
+  //let res = await call(getOrderInfo, params); // 从后端获取签名字串，参考支付接口调用
+  Alipay.pay(orderString).then(function(data){
+     
+      console.log(data);
+  }, function (err) {
+      console.log(err);
+  });
+
+}
+// "appid": "wx51f766378415c10f",
+// "error": 1,
+// "noncestr": "VJPJ9IVwBGNqdFpDL2bJDG3baheBYOve",
+// "package": "Sign\u003dWXPay",
+// "partnerid": "1480779302",
+// "paysign": "8F2AAD73E7A376511A6807AC9D055B70",
+// "prepayid": "wx2017122823411485997fd2e10769919598",
+// "timestamp": "1514475674"
+export function weixinPay(params) {
+  let formData = new FormData();  
+  formData.append("totalAmount","0.01");  
+    formData.append("description","111");  
+    formData.append("userId","1");  
+    formData.append("token","1B3CEF76-4DD2-4B17-9898-8FDEC7835C1B");   
+    // alert('支付');
+    fetch('http://sq.hc-it.com/ToPay',{
+      method:'POST',
+      headers:{},
+      body:formData,
+       })
+         .then((response) => response.json())
+         .then((responseJson) =>{
+          const aaa = { 
+            partnerId: responseJson.partnerid,  // 商家向财付通申请的商家id
+            prepayId: responseJson.prepayid,   // 预支付订单
+            nonceStr: responseJson.noncestr,   // 随机串，防重发
+            timeStamp: responseJson.timestamp,  // 时间戳，防重发
+            package: responseJson.package,    // 商家根据财付通文档填写的数据和签名
+            sign: responseJson.paysign, 
+          };
+          WeChat.pay(aaa)
+          .then(e =>{
+          if (e.errCode == '0') {
+                  alert('支付成功!');
+          } else {
+                  alert('抱歉,支付失败!');
+          }
+      }).catch(() =>{
+  
+      })
+          //this.pay(responseJson);
+         })
+         .catch((error) =>{
+         // alert('失败');
+          console.log(error);
+         }).done();
+}
+pay = (responseJson) =>{
+  console.log(responseJson);
+    
+    console.log(aaa);
+    
+}
+//获取位置
+export function getLocation() {
+  navigator.geolocation.getCurrentPosition(
+      location => {
+          var result = "速度：" + location.coords.speed +
+                      "\n经度：" + location.coords.longitude +
+                      "\n纬度：" + location.coords.latitude +
+                      "\n准确度：" + location.coords.accuracy +
+                      "\n行进方向：" + location.coords.heading +
+                      "\n海拔：" + location.coords.altitude +
+                      "\n海拔准确度：" + location.coords.altitudeAccuracy +
+                      "\n时间戳：" + location.timestamp;
+          alert(result);
+      },
+      error => {
+        alert("获取位置失败："+ error)
+      }
+  );
 }

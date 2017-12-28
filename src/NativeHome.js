@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import {Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {List} from 'antd-mobile';
+import {List,Toast} from 'antd-mobile';
 import * as WeChat from 'react-native-wechat';
 import {datas} from './Data';
 import * as Tools from './NativeTools';
 import JShareModule from 'jshare-react-native';
 
+var isHeaderShow = true;
 export default class NativeHome extends Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
+    this.props.navigation.setParams({isHeaderShow});
+    // this.state={
+    //   text:'隐藏导航栏'
+    // }
     var config = 
     {
       appKey:'a1703c14b186a68a66ef86c1',
@@ -38,6 +43,24 @@ export default class NativeHome extends Component {
         break;
       case '微信登录':
         Tools.sendAuthRequest();
+        break;
+      case '支付宝支付':
+        Tools.aliPay();
+        break;
+      case '微信支付':
+        Tools.weixinPay();
+        break;
+      case '点击获取位置':
+        Tools.getLocation();
+        break;
+      case '隐藏导航栏':
+        this.props.navigation.setParams({isHeaderShow:!this.props.navigation.state.params.isHeaderShow});
+        break;
+      case '点我退出app':
+        Toast.show('此功能仅限于android平台');
+        break;
+      case '阿里推送':
+        Toast.show('');
         break;
       default:
         break;

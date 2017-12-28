@@ -9,10 +9,23 @@ const HomeRouter = StackNavigator(
     {
         NativeHome:{
             screen: NativeHome,
-            navigationOptions: {
-                title: '原生',
-            }   
+            navigationOptions: ({navigation}) => {
+                let visible = false;
+                if (navigation.state.params) {
+                    if (navigation.state.params.isHeaderShow) {
+                        visible= true;
+                        return {
+                            title:'原生',
+                       }
+                    }
+                    
+                }
+                return {
+                    header:null
+                }
+            }
         }
+
     },
     {
         initialRouteName: 'NativeHome',

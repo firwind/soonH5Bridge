@@ -53,6 +53,9 @@
 		511F47791FEA2BE900813530 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F47781FEA2BE200813530 /* SystemConfiguration.framework */; };
 		511F477B1FEA2BFA00813530 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F477A1FEA2BFA00813530 /* libsqlite3.tbd */; };
 		511F477D1FEA2C9100813530 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F477C1FEA2C9100813530 /* AlipaySDK.framework */; };
+		5156D2E31FF53800003AC753 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5156D2BB1FF53800003AC753 /* AlipaySDK.bundle */; };
+		5156D2E51FF53829003AC753 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5156D2E41FF53829003AC753 /* AlipaySDK.framework */; };
+		5156D2E91FF53884003AC753 /* AlipayMoudle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5156D2E81FF53884003AC753 /* AlipayMoudle.m */; };
 		519B05911FEA6AC800E7947A /* libRCTWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 519B057C1FEA671900E7947A /* libRCTWeChat.a */; };
 		556E10A3ED594559BE46E8CE /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50209C40AA5741CDB4621D52 /* libjschelpers.a */; };
 		5DF73AB8C9314304A0FCB0BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9A6AA1D5054FDF8F47718E /* UIKit.framework */; };
@@ -399,6 +402,10 @@
 		511F47781FEA2BE200813530 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		511F477A1FEA2BFA00813530 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		511F477C1FEA2C9100813530 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		5156D2BB1FF53800003AC753 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		5156D2E41FF53829003AC753 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = "../../Downloads/WS_APP_PAY_SDK_BASE_2.0/Demo/iOSDemo_2.0(SDK_15.5.0)/AlipaySDK.framework"; sourceTree = "<group>"; };
+		5156D2E71FF53884003AC753 /* AlipayMoudle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlipayMoudle.h; sourceTree = SOURCE_ROOT; };
+		5156D2E81FF53884003AC753 /* AlipayMoudle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlipayMoudle.m; sourceTree = SOURCE_ROOT; };
 		554C7F2562C34AA7BDF0C9F8 /* RCTJShareModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTJShareModule.xcodeproj; path = "../node_modules/jshare-react-native/ios/RCTJShareModule.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		620204503088A27C23105B95 /* libPods-H5WithRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-H5WithRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -456,6 +463,7 @@
 				556E10A3ED594559BE46E8CE /* libjschelpers.a in Frameworks */,
 				17DC9D88E9AC491083619F20 /* libthird-party.a in Frameworks */,
 				39F1C7A288764C5FA2797CF5 /* libdouble-conversion.a in Frameworks */,
+				5156D2E51FF53829003AC753 /* AlipaySDK.framework in Frameworks */,
 				69F7DA08E6554DD38DD8E859 /* libRCTJShareModule.a in Frameworks */,
 				8B78D3352E4C42588AD9BFDA /* Security.framework in Frameworks */,
 				18BC083721E643CAA31D50BC /* CoreFoundation.framework in Frameworks */,
@@ -556,6 +564,9 @@
 		13B07FAE1A68108700A75B9A /* H5WithRN */ = {
 			isa = PBXGroup;
 			children = (
+				5156D2E61FF53859003AC753 /* Alipay */,
+				5156D2E41FF53829003AC753 /* AlipaySDK.framework */,
+				5156D2BB1FF53800003AC753 /* AlipaySDK.bundle */,
 				510566CB1FF3456A00C9408D /* ExampleApp.html */,
 				510566C21FF3451700C9408D /* index.html */,
 				510566C31FF3451700C9408D /* jqueryMobile */,
@@ -660,6 +671,15 @@
 				513A541C1FF4E7D0008C2D83 /* libRCTJCoreModule.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5156D2E61FF53859003AC753 /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+				5156D2E71FF53884003AC753 /* AlipayMoudle.h */,
+				5156D2E81FF53884003AC753 /* AlipayMoudle.m */,
+			);
+			path = Alipay;
 			sourceTree = "<group>";
 		};
 		519B05771FEA671900E7947A /* Products */ = {
@@ -1211,6 +1231,7 @@
 			files = (
 				510566C81FF3451700C9408D /* jquery.js in Resources */,
 				510566C71FF3451700C9408D /* index.html in Resources */,
+				5156D2E31FF53800003AC753 /* AlipaySDK.bundle in Resources */,
 				510566CA1FF3451700C9408D /* jquery.mobile-1.4.5.min.js in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -1325,6 +1346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				510566CF1FF367F400C9408D /* CustomWebviewManager.m in Sources */,
+				5156D2E91FF53884003AC753 /* AlipayMoudle.m in Sources */,
 				5105669C1FF3414000C9408D /* CustomWebview.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
