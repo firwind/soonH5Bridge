@@ -132,7 +132,7 @@ class mrouter extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <HomeRouter />
+                <Router />
             </View>
         );
     }

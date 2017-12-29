@@ -32,7 +32,7 @@ class WebHome extends Component {
             url=this.props.navigation.state.params.uri;
         }
         return (
-            <Webview 
+            <WebView 
              ref={(web)=>this.web=web}
              injectJavaScript={()=>this.injectJavaScript(script)}
              source={url?{uri:url}:{uri:'http://7xqi6y.com1.z0.glb.clouddn.com/index.html'}}
