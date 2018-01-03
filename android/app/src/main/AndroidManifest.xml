@@ -42,10 +42,7 @@
         <meta-data android:name="JSHARE_PKGNAME" android:value="${applicationId}" />
         <meta-data android:name="TENCENT_APPID" android:value="${TENCENT_APPID}" />
         <!-- Optional 微信分享回调,wxapi必须在包名路径下，否则回调不成功-->
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:exported="true" />
+
     </application>
 
 </manifest>
