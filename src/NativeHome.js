@@ -25,8 +25,9 @@ export default class NativeHome extends Component {
       sinaRedirectUri: 'https://www.jiguang.cn',
       isSupportWebSina: false
     }
-     
-    JShareModule.setup(config)
+    if (Platform.OS==='ios') {
+      JShareModule.setup(config)
+    }
     WeChat.registerApp('wx35f14e67f7ac19bc');
   }
  
