@@ -4105,10 +4105,6 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-amap3d@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-amap3d/-/react-native-amap3d-0.8.0.tgz#d260dfa5de16e4e7df67354e3ddf789c4771ecd5"
-
 react-native-camera-roll-picker@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-1.2.3.tgz#b117fd3a2b9012dcccee1261a9bc427226b8d6d2"

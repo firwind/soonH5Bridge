@@ -11,7 +11,6 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <AMapFoundationKit/AMapFoundationKit.h>
 #import <React/RCTLinkingManager.h>
 #import "CustomWebview.h"
 #import <RCTJShareModule.h>
@@ -35,7 +34,7 @@
   rootViewController.view = rootView;
   CustomWebview *view = [[CustomWebview alloc] init];
  // rootViewController.view = view;
-  [AMapServices sharedServices].apiKey = @"003c166ea23ff3c3dd8b1bafe94c7920";
+//  [AMapServices sharedServices].apiKey = @"003c166ea23ff3c3dd8b1bafe94c7920";
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;

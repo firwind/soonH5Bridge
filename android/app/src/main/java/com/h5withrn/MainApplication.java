@@ -6,7 +6,6 @@ import com.facebook.react.ReactApplication;
 import cn.reactnative.modules.weibo.WeiboPackage;
 import cn.jiguang.share.reactnative.JSharePackage;
 import com.theweflex.react.WeChatPackage;
-import cn.qiuxiang.react.amap3d.AMap3DPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -28,8 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new JSharePackage(),
-            new WeChatPackage(),
-            new AMap3DPackage()
+            new WeChatPackage()
       );
     }
 
