@@ -13,6 +13,7 @@
 #import <React/RCTRootView.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <React/RCTLinkingManager.h>
+#import "CustomWebview.h"
 
 @implementation AppDelegate
 
@@ -31,6 +32,8 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
+  CustomWebview *view = [[CustomWebview alloc] init];
+ // rootViewController.view = view;
   [AMapServices sharedServices].apiKey = @"003c166ea23ff3c3dd8b1bafe94c7920";
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];

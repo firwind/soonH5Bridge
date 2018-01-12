@@ -33,6 +33,13 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		39F1C7A288764C5FA2797CF5 /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF2D54A9E724E46AF40CB8B /* libdouble-conversion.a */; };
+		5105669C1FF3414000C9408D /* CustomWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5105669B1FF3414000C9408D /* CustomWebview.m */; };
+		510566C71FF3451700C9408D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 510566C21FF3451700C9408D /* index.html */; };
+		510566C81FF3451700C9408D /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 510566C41FF3451700C9408D /* jquery.js */; };
+		510566C91FF3451700C9408D /* jquery.mobile-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 510566C51FF3451700C9408D /* jquery.mobile-1.4.5.min.css */; };
+		510566CA1FF3451700C9408D /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 510566C61FF3451700C9408D /* jquery.mobile-1.4.5.min.js */; };
+		510566CC1FF3456A00C9408D /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 510566CB1FF3456A00C9408D /* ExampleApp.html */; };
+		510566CF1FF367F400C9408D /* CustomWebviewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 510566CE1FF367F400C9408D /* CustomWebviewManager.m */; };
 		511F47671FEA2B5400813530 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F47661FEA2B5400813530 /* libz.tbd */; };
 		511F47691FEA2B6000813530 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F47681FEA2B6000813530 /* libc++.tbd */; };
 		511F476B1FEA2B6F00813530 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F476A1FEA2B6800813530 /* CoreMotion.framework */; };
@@ -348,6 +355,15 @@
 		3FFDFEB782B62A7854EBD937 /* Pods-H5WithRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H5WithRN.release.xcconfig"; path = "Pods/Target Support Files/Pods-H5WithRN/Pods-H5WithRN.release.xcconfig"; sourceTree = "<group>"; };
 		4CF2D54A9E724E46AF40CB8B /* libdouble-conversion.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libdouble-conversion.a"; sourceTree = "<group>"; };
 		50209C40AA5741CDB4621D52 /* libjschelpers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libjschelpers.a; sourceTree = "<group>"; };
+		5105669A1FF3414000C9408D /* CustomWebview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWebview.h; sourceTree = "<group>"; };
+		5105669B1FF3414000C9408D /* CustomWebview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWebview.m; sourceTree = "<group>"; };
+		510566C21FF3451700C9408D /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = ../src/web/index.html; sourceTree = "<group>"; };
+		510566C41FF3451700C9408D /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		510566C51FF3451700C9408D /* jquery.mobile-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.min.css"; sourceTree = "<group>"; };
+		510566C61FF3451700C9408D /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
+		510566CB1FF3456A00C9408D /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
+		510566CD1FF367F400C9408D /* CustomWebviewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWebviewManager.h; sourceTree = "<group>"; };
+		510566CE1FF367F400C9408D /* CustomWebviewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWebviewManager.m; sourceTree = "<group>"; };
 		511F47661FEA2B5400813530 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		511F47681FEA2B6000813530 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		511F476A1FEA2B6800813530 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -503,6 +519,9 @@
 		13B07FAE1A68108700A75B9A /* H5WithRN */ = {
 			isa = PBXGroup;
 			children = (
+				510566CB1FF3456A00C9408D /* ExampleApp.html */,
+				510566C21FF3451700C9408D /* index.html */,
+				510566C31FF3451700C9408D /* jqueryMobile */,
 				511F477C1FEA2C9100813530 /* AlipaySDK.framework */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -511,6 +530,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				5105669A1FF3414000C9408D /* CustomWebview.h */,
+				5105669B1FF3414000C9408D /* CustomWebview.m */,
+				510566CD1FF367F400C9408D /* CustomWebviewManager.h */,
+				510566CE1FF367F400C9408D /* CustomWebviewManager.m */,
 			);
 			name = H5WithRN;
 			sourceTree = "<group>";
@@ -553,6 +576,17 @@
 				620204503088A27C23105B95 /* libPods-H5WithRN.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		510566C31FF3451700C9408D /* jqueryMobile */ = {
+			isa = PBXGroup;
+			children = (
+				510566C41FF3451700C9408D /* jquery.js */,
+				510566C51FF3451700C9408D /* jquery.mobile-1.4.5.min.css */,
+				510566C61FF3451700C9408D /* jquery.mobile-1.4.5.min.js */,
+			);
+			name = jqueryMobile;
+			path = ../src/web/jqueryMobile;
 			sourceTree = "<group>";
 		};
 		511F47311FEA2B1200813530 /* Recovered References */ = {
@@ -1091,8 +1125,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510566C81FF3451700C9408D /* jquery.js in Resources */,
+				510566C71FF3451700C9408D /* index.html in Resources */,
+				510566CA1FF3451700C9408D /* jquery.mobile-1.4.5.min.js in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				510566C91FF3451700C9408D /* jquery.mobile-1.4.5.min.css in Resources */,
+				510566CC1FF3456A00C9408D /* ExampleApp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,6 +1240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510566CF1FF367F400C9408D /* CustomWebviewManager.m in Sources */,
+				5105669C1FF3414000C9408D /* CustomWebview.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

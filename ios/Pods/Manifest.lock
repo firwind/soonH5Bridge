@@ -12,11 +12,13 @@ PODS:
     - React
   - React/Core (0.51.0):
     - yoga (= 0.51.0.React)
+  - WebViewJavascriptBridge (6.0.2)
   - yoga (0.51.0.React)
 
 DEPENDENCIES:
   - React (from `../node_modules/react-native/`)
   - react-native-amap3d (from `../node_modules/react-native-amap3d/ios/`)
+  - WebViewJavascriptBridge (~> 6.0)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/`)
 
 EXTERNAL SOURCES:
@@ -33,8 +35,9 @@ SPEC CHECKSUMS:
   AMapNavi: bb4d65295ed0ee0ad4b5f5792e9e2ea0e5117ffa
   React: 352f02f1db6e4744f9a758527e13e3fdefbbd6ba
   react-native-amap3d: a752c4c430e640d6459ced928aa9ee0aefa1a92f
+  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   yoga: b5d96400ca8b2936965a7a6516da7c1177f432a3
 
-PODFILE CHECKSUM: 36f685f70c103c98dffad45fc0a816ae5176123c
+PODFILE CHECKSUM: 553031f8eafa06a6fedb96833c20c16fcd5d26a3
 
 COCOAPODS: 1.3.1

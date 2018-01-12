@@ -1,13 +1,34 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, WebView } from 'react-native';
+import {Toast} from 'antd-mobile';
 
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+const mHtml = require('./web/index.html');
 // create a component
 class WebHome extends Component {
+    onMessage = (message) => {
+    let text = message.nativeEvent.data;
+    this.injectJavaScript();
+     console.log('====================================');
+     console.log('第三方士大夫');
+     console.log('====================================');
+    }
+    injectJavaScript = (script) =>{
+        this.web.injectJavaScript('javascript:SignIn(jjjj)');
+    }
+    
     render() {
         return (
             <WebView 
-             source={require('./web/index.html')}
+             ref={(web)=>this.web=web}
+             injectJavaScript={()=>this.injectJavaScript(script)}
+             source={mHtml}
+             onLoadStart={()=>Toast.loading('Loading', 5)}
+             onError={()=>Toast.hide()}
+             onLoadEnd={()=>Toast.hide()}
+             javaScriptEnabled
+             onMessage={(message)=>this.onMessage(message)}
             />
         );
     }
