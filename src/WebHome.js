@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, WebView } from 'react-native';
 import {Toast} from 'antd-mobile';
-
+import CustomWebview from './components/WebviewBridge';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 const mHtml = require('./web/index.html');
 // create a component
@@ -20,7 +20,7 @@ class WebHome extends Component {
     
     render() {
         return (
-            <WebView 
+            <CustomWebview 
              ref={(web)=>this.web=web}
              injectJavaScript={()=>this.injectJavaScript(script)}
              source={mHtml}
