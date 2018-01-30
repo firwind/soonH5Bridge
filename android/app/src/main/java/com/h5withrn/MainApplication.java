@@ -51,6 +51,8 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    JShareInterface.setDebugMode(true);
     JShareInterface.init(this);
+
   }
 }
